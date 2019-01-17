@@ -65,9 +65,8 @@ WORKDIR /opt/shopalitic/home
 # Build this project
 COPY target/discovery-service-*-SNAPSHOT.jar  	/opt/shopalitic/home/discovery-service.jar
 
-
 # Define default command.
-RUN chmod 700 /opt/shopalitic/home/discovery-service-api.jar
+RUN chmod 700 /opt/shopalitic/home/discovery-service.jar
 
 ENTRYPOINT ["java","-jar","/opt/shopalitic/home/discovery-service.jar"]
 CMD ["-h"]
