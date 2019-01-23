@@ -59,11 +59,13 @@ RUN cd /tmp/ && \
 # Create the home dir
 RUN mkdir -p /opt/shopalitic/home
 
+# Build this project
+RUN pwd
+
+COPY ../target/discovery-service-*-SNAPSHOT.jar  /opt/shopalitic/home/discovery-service.jar
+
 # Define working directory.
 WORKDIR /opt/shopalitic/home
-
-# Build this project
-COPY target/discovery-service-*-SNAPSHOT.jar  	/opt/shopalitic/home/discovery-service.jar
 
 # Define default command.
 RUN chmod 700 /opt/shopalitic/home/discovery-service.jar
