@@ -11,6 +11,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 (
   echo ${DIR}
   cd "${DIR}/.."
-  ./bin/deploy -e staging -b origin/master
+  ./bin/deploy -e staging -b origin/master -s ${ECS_SERVICE_NAME} -t ${ECS_TASK_DEFINITION_NAME} -r ${ECR_NAME}
 )
 
